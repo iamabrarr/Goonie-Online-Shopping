@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onlinemarketapp/Views/Constants/colors.dart';
-import 'package:onlinemarketapp/Views/Screens/Roots/ListofBottoms/HomeScreen/home.dart';
+import 'package:onlinemarketapp/Views/Screens/BottomNavBar/BottomNavBar.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/my_button.dart';
 
@@ -70,7 +70,7 @@ class FingerPrint extends StatelessWidget {
           ),
           MyButton(
             press: () {
-              Get.to(HomeScreen());
+              Get.to(BottomNavBar());
             },
             height: SizeConfig.heightMultiplier * 08,
             width: SizeConfig.widthMultiplier * 90,

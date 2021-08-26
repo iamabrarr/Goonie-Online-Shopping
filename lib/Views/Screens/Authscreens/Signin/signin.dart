@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:onlinemarketapp/Views/Constants/colors.dart';
 import 'package:onlinemarketapp/Views/Screens/Authscreens/Signup/signup.dart';
+import 'package:onlinemarketapp/Views/Screens/BottomNavBar/BottomNavBar.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/input_textfield.dart';
 import 'package:onlinemarketapp/Views/Widgets/my_button.dart';
@@ -73,7 +73,9 @@ class Signin extends StatelessWidget {
                         height: SizeConfig.heightMultiplier * 6,
                       ),
                       MyButton(
-                        press: () {},
+                        press: () {
+                          Get.to(BottomNavBar());
+                        },
                         height: SizeConfig.heightMultiplier * 08,
                         width: SizeConfig.widthMultiplier * 85,
                         circular: 20,

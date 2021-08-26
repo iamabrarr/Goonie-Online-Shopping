@@ -13,7 +13,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController name = TextEditingController();
     TextEditingController email = TextEditingController();
-    TextEditingController phone = TextEditingController();
+
     TextEditingController password = TextEditingController();
     return Scaffold(
       backgroundColor: PrimaryColor,

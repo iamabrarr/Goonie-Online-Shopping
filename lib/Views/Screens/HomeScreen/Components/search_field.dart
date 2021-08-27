@@ -14,7 +14,9 @@ class Searchfield extends StatelessWidget {
       ),
       height: SizeConfig.heightMultiplier * 6,
       width: SizeConfig.widthMultiplier * 93,
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(
+          vertical: SizeConfig.heightMultiplier * 0.6,
+          horizontal: SizeConfig.widthMultiplier * 1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Color(0xFFF6F8F9),

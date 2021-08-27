@@ -42,7 +42,7 @@ class Signin extends StatelessWidget {
                 ),
                 SizedBox(height: SizeConfig.heightMultiplier * 10),
                 Container(
-                  height: SizeConfig.heightMultiplier * 55,
+                  height: SizeConfig.heightMultiplier * 57.5,
                   width: SizeConfig.widthMultiplier * 93,
                   padding: EdgeInsets.symmetric(
                       vertical: SizeConfig.heightMultiplier * 5,

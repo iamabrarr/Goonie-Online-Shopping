@@ -21,7 +21,7 @@ class SignUp extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: SizeConfig.heightMultiplier * 5),
+              SizedBox(height: SizeConfig.heightMultiplier * 3),
               Center(
                 child: Column(children: [
                   Image.asset(
@@ -42,13 +42,13 @@ class SignUp extends StatelessWidget {
                 ]),
               ),
               SizedBox(
-                height: SizeConfig.heightMultiplier * 5,
+                height: SizeConfig.heightMultiplier * 6,
               ),
               Container(
-                height: SizeConfig.heightMultiplier * 69,
+                height: SizeConfig.heightMultiplier * 62,
                 width: SizeConfig.widthMultiplier * 93,
                 padding: EdgeInsets.symmetric(
-                    vertical: SizeConfig.heightMultiplier * 7,
+                    vertical: SizeConfig.heightMultiplier * 4,
                     horizontal: SizeConfig.widthMultiplier * 7),
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -80,7 +80,7 @@ class SignUp extends StatelessWidget {
                         icon: Icons.lock_outline,
                         controller: password),
                     SizedBox(
-                      height: SizeConfig.heightMultiplier * 6,
+                      height: SizeConfig.heightMultiplier * 4,
                     ),
                     MyButton(
                       press: () {

@@ -57,7 +57,7 @@ class FingerPrint extends StatelessWidget {
                       color: Colors.grey.shade600, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
-                  height: SizeConfig.heightMultiplier * 7,
+                  height: SizeConfig.heightMultiplier * 5,
                 ),
                 Center(
                   child: Image.asset("assets/fingerprint.png"),

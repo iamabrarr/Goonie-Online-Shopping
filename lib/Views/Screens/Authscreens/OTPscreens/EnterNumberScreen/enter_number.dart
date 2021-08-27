@@ -50,7 +50,7 @@ class _EnterNumberState extends State<EnterNumber> {
               height: SizeConfig.heightMultiplier * 12,
             ),
             Container(
-              height: SizeConfig.heightMultiplier * 31,
+              height: SizeConfig.heightMultiplier * 33,
               width: SizeConfig.widthMultiplier * 93,
               padding: EdgeInsets.symmetric(
                   vertical: SizeConfig.heightMultiplier * 4,

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 
-class ProductRatings extends StatefulWidget {
-  const ProductRatings({
+class Ratings extends StatefulWidget {
+  const Ratings({
     Key key,
   }) : super(key: key);
 
   @override
-  _ProductRatingsState createState() => _ProductRatingsState();
+  _RatingsState createState() => _RatingsState();
 }
 
-class _ProductRatingsState extends State<ProductRatings> {
+class _RatingsState extends State<Ratings> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +21,7 @@ class _ProductRatingsState extends State<ProductRatings> {
           minRating: 0.5,
           direction: Axis.horizontal,
           allowHalfRating: true,
-          itemSize: SizeConfig.heightMultiplier * 2.5,
+          itemSize: SizeConfig.heightMultiplier * 2,
           itemCount: 5,
           itemBuilder: (context, _) => Icon(
             Icons.star,

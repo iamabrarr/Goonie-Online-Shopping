@@ -18,10 +18,6 @@ class MegaDealsWidget extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: SizeConfig.heightMultiplier * 20,
-            width: SizeConfig.widthMultiplier * 94,
-          ),
-          Container(
               height: SizeConfig.heightMultiplier * 18,
               width: SizeConfig.widthMultiplier * 94,
               decoration: BoxDecoration(

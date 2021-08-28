@@ -45,7 +45,7 @@ class SignUp extends StatelessWidget {
                 height: SizeConfig.heightMultiplier * 6,
               ),
               Container(
-                height: SizeConfig.heightMultiplier * 62,
+                height: SizeConfig.heightMultiplier * 65.5,
                 width: SizeConfig.widthMultiplier * 93,
                 padding: EdgeInsets.symmetric(
                     vertical: SizeConfig.heightMultiplier * 4,

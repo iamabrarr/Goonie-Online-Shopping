@@ -130,13 +130,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  persistent_bottom_nav_bar:
+  percent_indicator:
     dependency: "direct main"
     description:
-      name: persistent_bottom_nav_bar
+      name: percent_indicator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.2"
+    version: "3.0.1"
   pin_entry_text_field:
     dependency: "direct main"
     description:

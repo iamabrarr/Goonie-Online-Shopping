@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/ratings.dart';
-import 'Components/contact_container.dart';
+import '../../../../Widgets/contact_container.dart';
 import 'Components/order_now_bottom_sheet.dart';
 
 class InfoTab extends StatelessWidget {

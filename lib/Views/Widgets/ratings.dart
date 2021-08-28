@@ -17,22 +17,18 @@ class Ratings extends StatefulWidget {
 class _RatingsState extends State<Ratings> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        RatingBar.builder(
-          initialRating: widget.rating,
-          minRating: 0.5,
-          direction: Axis.horizontal,
-          allowHalfRating: true,
-          itemSize: SizeConfig.heightMultiplier * 2,
-          itemCount: 5,
-          itemBuilder: (context, _) => Icon(
-            Icons.star,
-            color: widget.color,
-          ),
-          onRatingUpdate: (rating) {},
-        ),
-      ],
+    return RatingBar.builder(
+      initialRating: widget.rating,
+      minRating: 0.5,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemSize: SizeConfig.heightMultiplier * 2,
+      itemCount: 5,
+      itemBuilder: (context, _) => Icon(
+        Icons.star,
+        color: widget.color,
+      ),
+      onRatingUpdate: (rating) {},
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:onlinemarketapp/Views/Screens/OrderNowScreen/order_now_screen.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/my_button.dart';
 
@@ -57,7 +59,7 @@ class OrderNowBottomSheet extends StatelessWidget {
                 title: "order now".toUpperCase(),
                 color: Color(0xFFB23F56),
                 press: () {
-                  // Get.to(CafeScreen());
+                  Get.to(OrderNowScreen());
                 }),
             SizedBox(
               width: SizeConfig.widthMultiplier * 4,

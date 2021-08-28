@@ -5,8 +5,11 @@ import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 class Ratings extends StatefulWidget {
   const Ratings({
     Key key,
+    @required this.rating,
+    @required this.color,
   }) : super(key: key);
-
+  final double rating;
+  final Color color;
   @override
   _RatingsState createState() => _RatingsState();
 }
@@ -17,7 +20,7 @@ class _RatingsState extends State<Ratings> {
     return Column(
       children: [
         RatingBar.builder(
-          initialRating: 4,
+          initialRating: widget.rating,
           minRating: 0.5,
           direction: Axis.horizontal,
           allowHalfRating: true,
@@ -25,7 +28,7 @@ class _RatingsState extends State<Ratings> {
           itemCount: 5,
           itemBuilder: (context, _) => Icon(
             Icons.star,
-            color: Colors.amber,
+            color: widget.color,
           ),
           onRatingUpdate: (rating) {},
         ),

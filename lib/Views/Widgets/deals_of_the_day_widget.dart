@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:onlinemarketapp/Models/best_deals_models.dart';
+import 'package:onlinemarketapp/Models/deals_of_the_day_models.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 
-class BestDealsWidget extends StatefulWidget {
-  const BestDealsWidget({
+class DealsOfTheDayWidget extends StatefulWidget {
+  const DealsOfTheDayWidget({
     Key key,
     @required this.deal,
   }) : super(key: key);
   final BestDeals deal;
 
   @override
-  _BestDealsWidgetState createState() => _BestDealsWidgetState();
+  _DealsOfTheDayWidgetState createState() => _DealsOfTheDayWidgetState();
 }
 
-class _BestDealsWidgetState extends State<BestDealsWidget> {
+class _DealsOfTheDayWidgetState extends State<DealsOfTheDayWidget> {
   bool liked = false;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: SizeConfig.heightMultiplier * 17,
       width: SizeConfig.widthMultiplier * 84,
-      margin: EdgeInsets.only(
-          bottom: SizeConfig.heightMultiplier * 4,
-          left: SizeConfig.widthMultiplier * 3.5,
-          right: SizeConfig.widthMultiplier * 2),
+      margin: EdgeInsets.only(right: SizeConfig.widthMultiplier * 2),
       child: Row(
         children: [
           Stack(

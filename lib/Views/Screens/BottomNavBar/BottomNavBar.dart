@@ -2,147 +2,201 @@ import 'package:flutter/material.dart';
 import 'package:fluttericon/linecons_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:onlinemarketapp/Views/Constants/colors.dart';
 import 'package:onlinemarketapp/Views/Screens/FavouritesScreen/favourites.dart';
 import 'package:onlinemarketapp/Views/Screens/HomeScreen/home.dart';
 import 'package:onlinemarketapp/Views/Screens/MyCart/my_cart.dart';
 import 'package:onlinemarketapp/Views/Screens/NewsScreen/news.dart';
 import 'package:onlinemarketapp/Views/Screens/OrderScreen/orders.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key key}) : super(key: key);
-  static PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
-  // List widgets = [
-  //   HomeScreen(),
-  //   NewsScreen(),
-  //   FavouriteScreen(),
-  //   OrderScreen(),
-  // ];
-  // int selectedindex = 0;
-  List<Widget> _buildScreens() {
-    return [
-      HomeScreen(),
-      NewsScreen(),
-      MyCartScreen(),
-      FavouriteScreen(),
-      OrderScreen(),
-    ];
-  }
-
-  List<PersistentBottomNavBarItem> _navBarsItems() {
-    return [
-      PersistentBottomNavBarItem(
-        onPressed: (context) {},
-        icon: Icon(Icons.home),
-        title: "Grocery",
-        activeColorPrimary: BNBiconsColor,
-        inactiveColorPrimary: Colors.grey,
-        textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: SizeConfig.textMultiplier * 1.1),
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.notifications_outlined),
-        title: "News",
-        activeColorPrimary: BNBiconsColor,
-        inactiveColorPrimary: Colors.grey,
-        textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: SizeConfig.textMultiplier * 1.1),
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(
-          Icons.local_grocery_store,
-          color: Colors.white,
-        ),
-        textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: SizeConfig.textMultiplier * 1.1),
-        title: "",
-        activeColorPrimary: BNBiconsColor,
-        inactiveColorPrimary: Colors.grey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.favorite),
-        title: "Favourites",
-        textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: SizeConfig.textMultiplier * 1.1),
-        activeColorPrimary: BNBiconsColor,
-        inactiveColorPrimary: Colors.grey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(MdiIcons.wallet),
-        title: "Orders",
-        activeColorPrimary: BNBiconsColor,
-        inactiveColorPrimary: Colors.grey,
-        textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: SizeConfig.textMultiplier * 1.1),
-      ),
-    ];
-  }
 
   @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  List<Widget> screens = [
+    HomeScreen(),
+    NewsScreen(),
+    MyCartScreen(),
+    FavouriteScreen(),
+    OrderScreen(),
+  ];
+  int selectedindex = 0;
+  @override
   Widget build(BuildContext context) {
-    return PersistentTabView(
-      context,
-      controller: _controller,
-      screens: _buildScreens(),
-      items: _navBarsItems(),
-      confineInSafeArea: true,
-      backgroundColor: Color(0xFFF5F9FA),
-      handleAndroidBackButtonPress: true,
-      resizeToAvoidBottomInset: true,
-      stateManagement: true,
-      hideNavigationBarWhenKeyboardShows: true,
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        colorBehindNavBar: Colors.white,
+    return Scaffold(
+      body: screens.elementAt(selectedindex),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        color: Color(0xFFF5F9FA),
+        child: Container(
+          height: SizeConfig.heightMultiplier * 7,
+          width: SizeConfig.widthMultiplier,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  MaterialButton(
+                    minWidth: SizeConfig.widthMultiplier * 3,
+                    onPressed: () {
+                      setState(() {
+                        selectedindex = 0;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        selectedindex == 0
+                            ? Icon(
+                                Icons.home,
+                                color: Color(0xFFD93F11),
+                              )
+                            : Icon(
+                                Icons.home_outlined,
+                                color: Colors.grey,
+                              ),
+                        SizedBox(
+                          height: SizeConfig.heightMultiplier * 1,
+                        ),
+                        Text(
+                          "Home",
+                          style: TextStyle(
+                              color: selectedindex == 0
+                                  ? Color(0xFFD93F11)
+                                  : Colors.grey.shade500,
+                              fontSize: SizeConfig.textMultiplier * 1,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      setState(() {
+                        selectedindex = 1;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        selectedindex == 1
+                            ? Icon(
+                                Icons.notifications,
+                                color: Color(0xFFD93F11),
+                              )
+                            : Icon(
+                                Icons.notifications_outlined,
+                                color: Colors.grey,
+                              ),
+                        SizedBox(
+                          height: SizeConfig.heightMultiplier * 1,
+                        ),
+                        Text(
+                          "News",
+                          style: TextStyle(
+                              color: selectedindex == 1
+                                  ? Color(0xFFD93F11)
+                                  : Colors.grey,
+                              fontSize: SizeConfig.textMultiplier * 1,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  MaterialButton(
+                    minWidth: SizeConfig.widthMultiplier * 2.5,
+                    onPressed: () {
+                      setState(() {
+                        selectedindex = 3;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        selectedindex == 3
+                            ? Icon(
+                                Icons.favorite,
+                                color: Color(0xFFD93F11),
+                              )
+                            : Icon(
+                                Icons.favorite_outline,
+                                color: Colors.grey,
+                              ),
+                        SizedBox(
+                          height: SizeConfig.heightMultiplier * 1,
+                        ),
+                        Text(
+                          "Favourites",
+                          style: TextStyle(
+                              color: selectedindex == 3
+                                  ? Color(0xFFD93F11)
+                                  : Colors.grey,
+                              fontSize: SizeConfig.textMultiplier * 1,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: SizeConfig.widthMultiplier * 4,
+                    onPressed: () {
+                      setState(() {
+                        selectedindex = 4;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        selectedindex == 4
+                            ? Icon(
+                                MdiIcons.wallet,
+                                color: Color(0xFFD93F11),
+                              )
+                            : Icon(
+                                MdiIcons.walletOutline,
+                                color: Colors.grey,
+                              ),
+                        SizedBox(
+                          height: SizeConfig.heightMultiplier * 1,
+                        ),
+                        Text(
+                          "Orders",
+                          style: TextStyle(
+                              color: selectedindex == 4
+                                  ? Color(0xFFD93F11)
+                                  : Colors.grey,
+                              fontSize: SizeConfig.textMultiplier * 1,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
       ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      // itemAnimationProperties: ItemAnimationProperties(
-      //   duration: Duration(milliseconds: 200),
-      //   curve: Curves.ease,
-      // ),
-      // screenTransitionAnimation: ScreenTransitionAnimation(
-      //   animateTabTransition: true,
-      //   curve: Curves.ease,
-      //   duration: Duration(milliseconds: 200),
-      // ),
-      navBarStyle: NavBarStyle.style15,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            selectedindex = 2;
+          });
+        },
+        backgroundColor: Color(0xFFD93F11),
+        child: Icon(Icons.local_grocery_store),
+      ),
     );
-    // body: widgets.elementAt(selectedindex),
-    // pr
-    // bottomNavigationBar: BottomNavigationBar(
-    //     onTap: (index) {
-    //       setState(() {
-    //         selectedindex = index;
-    //       });
-    //     },
-    //     elevation: 5,
-    //     unselectedItemColor: Colors.grey,
-    //     selectedItemColor: Color(0xFFD93F11),
-    //     currentIndex: selectedindex,
-    //     items: [
-    //       BottomNavigationBarItem(
-    //         icon: Icon(
-    //           FontAwesomeIcons.shopify,
-    //         ),
-    //         label: "Grocery",
-    //       ),
-    //       BottomNavigationBarItem(
-    //           icon: Icon(Icons.notifications_none_outlined), label: "News"),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(Icons.favorite),
-    //         label: "Favourites",
-    //       ),
-    //       BottomNavigationBarItem(
-    //           icon: Icon(MdiIcons.wallet), label: "Orders"),
-    //     ]));
   }
 }

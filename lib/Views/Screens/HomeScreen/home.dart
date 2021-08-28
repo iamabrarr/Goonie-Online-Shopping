@@ -4,12 +4,12 @@ import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:onlinemarketapp/Models/addresses_models.dart';
-import 'package:onlinemarketapp/Models/best_deals_models.dart';
+import 'package:onlinemarketapp/Models/deals_of_the_day_models.dart';
 import 'package:onlinemarketapp/Models/food_categories_models.dart';
 import 'package:onlinemarketapp/Models/mega_deals_models.dart';
 import 'package:onlinemarketapp/Views/Screens/MegaDealsDetailsScreen/mega_deals_detals.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
-import 'Components/best_deals_widget.dart';
+import '../../Widgets/deals_of_the_day_widget.dart';
 import 'Components/category_widget.dart';
 import 'Components/mega deals_widget.dart';
 import 'Components/map_widget.dart';
@@ -144,7 +144,13 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (_, index) {
-                    return BestDealsWidget(deal: deals[index]);
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        bottom: SizeConfig.heightMultiplier * 4,
+                        left: SizeConfig.widthMultiplier * 3.5,
+                      ),
+                      child: DealsOfTheDayWidget(deal: deals[index]),
+                    );
                   }),
             ),
             Container(

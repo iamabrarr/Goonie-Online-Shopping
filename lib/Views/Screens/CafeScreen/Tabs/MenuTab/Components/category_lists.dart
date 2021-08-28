@@ -19,7 +19,7 @@ class CategoryList extends StatelessWidget {
           color: Color(0xFFB1EAFD), borderRadius: BorderRadius.circular(10)),
       child: Center(
           child: Text(
-        text,
+        text.toUpperCase(),
         style: TextStyle(
             fontSize: SizeConfig.textMultiplier * 1.1,
             fontWeight: FontWeight.w600,

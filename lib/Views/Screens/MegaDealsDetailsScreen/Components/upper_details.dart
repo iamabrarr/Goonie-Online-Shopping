@@ -61,7 +61,10 @@ class UpperDetail extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.heightMultiplier * 1,
               ),
-              Ratings(),
+              Ratings(
+                color: Colors.amber,
+                rating: detail.rating,
+              ),
               SizedBox(
                 height: SizeConfig.heightMultiplier * 1,
               ),

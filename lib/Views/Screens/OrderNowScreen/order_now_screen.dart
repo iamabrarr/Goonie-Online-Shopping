@@ -1,15 +1,33 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:fluttericon/linecons_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:onlinemarketapp/Views/Constants/colors.dart';
 import 'package:onlinemarketapp/Views/Screens/MessageScreen/message_screen.dart';
+import 'package:onlinemarketapp/Views/Screens/PaymentMethodScreen/payment_method.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/contact_container.dart';
 
-class OrderNowScreen extends StatelessWidget {
+class OrderNowScreen extends StatefulWidget {
   const OrderNowScreen({Key key}) : super(key: key);
 
+  @override
+  _OrderNowScreenState createState() => _OrderNowScreenState();
+}
+
+class _OrderNowScreenState extends State<OrderNowScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2), () {
+      setState(() {
+        payment = true;
+      });
+    });
+  }
+
+  bool payment = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -222,6 +240,25 @@ class OrderNowScreen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: payment
+          ? Container(
+              margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier * 8),
+              width: SizeConfig.widthMultiplier * 35,
+              child: FloatingActionButton(
+                onPressed: () {
+                  Get.to(PaymentMethodScreen());
+                },
+                backgroundColor: redColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                child: Text(
+                  "Pay order",
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+              ),
+            )
+          : null,
     );
   }
 }

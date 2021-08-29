@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/linecons_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:onlinemarketapp/Views/Screens/FavouritesScreen/favourites.dart';
 import 'package:onlinemarketapp/Views/Screens/HomeScreen/home.dart';
 import 'package:onlinemarketapp/Views/Screens/MyCart/my_cart.dart';
+import 'package:onlinemarketapp/Views/Screens/MyOrderScreen/my_orders.dart';
 import 'package:onlinemarketapp/Views/Screens/NewsScreen/news.dart';
-import 'package:onlinemarketapp/Views/Screens/OrderScreen/orders.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -22,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     NewsScreen(),
     MyCartScreen(),
     FavouriteScreen(),
-    OrderScreen(),
+    MyOrderScreen(),
   ];
   int selectedindex = 0;
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:onlinemarketapp/Views/Screens/CallScreen/Components/profile_pic_widget.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
@@ -56,7 +57,9 @@ class CallScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.back();
+                  },
                   child: Container(
                     height: SizeConfig.heightMultiplier * 8,
                     width: SizeConfig.widthMultiplier * 18,
@@ -76,7 +79,9 @@ class CallScreen extends StatelessWidget {
                   width: SizeConfig.widthMultiplier * 5,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.back();
+                  },
                   child: Container(
                     height: SizeConfig.heightMultiplier * 8,
                     width: SizeConfig.widthMultiplier * 18,

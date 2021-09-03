@@ -71,6 +71,7 @@ class FeaturedDrinksWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Ratings(
+                  itemSize: SizeConfig.heightMultiplier * 2,
                   rating: drink.rating,
                   color: drink.darkcolor,
                 ),

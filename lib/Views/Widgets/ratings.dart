@@ -7,9 +7,11 @@ class Ratings extends StatefulWidget {
     Key key,
     @required this.rating,
     @required this.color,
+    @required this.itemSize,
   }) : super(key: key);
   final double rating;
   final Color color;
+  final double itemSize;
   @override
   _RatingsState createState() => _RatingsState();
 }
@@ -22,7 +24,7 @@ class _RatingsState extends State<Ratings> {
       minRating: 0.5,
       direction: Axis.horizontal,
       allowHalfRating: true,
-      itemSize: SizeConfig.heightMultiplier * 2,
+      itemSize: widget.itemSize,
       itemCount: 5,
       itemBuilder: (context, _) => Icon(
         Icons.star,

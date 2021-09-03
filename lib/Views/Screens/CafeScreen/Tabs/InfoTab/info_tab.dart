@@ -30,6 +30,7 @@ class InfoTab extends StatelessWidget {
               Row(
                 children: [
                   Ratings(
+                    itemSize: SizeConfig.heightMultiplier * 2,
                     color: Colors.amber,
                     rating: 4,
                   ),

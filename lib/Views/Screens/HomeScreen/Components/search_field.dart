@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:onlinemarketapp/Views/Screens/FilterScreen/filter_screen.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 
 class Searchfield extends StatelessWidget {
@@ -41,7 +44,16 @@ class Searchfield extends StatelessWidget {
               ),
             ),
           ),
-          Icon(Icons.mic_none),
+          GestureDetector(
+            onTap: () {
+              Get.to(FilterScreen());
+            },
+            child: Container(
+              height: SizeConfig.heightMultiplier * 6,
+              width: SizeConfig.widthMultiplier * 15,
+              child: Icon(MdiIcons.filter),
+            ),
+          )
         ],
       ),
     );

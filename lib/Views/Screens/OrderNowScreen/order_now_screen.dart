@@ -9,25 +9,9 @@ import 'package:onlinemarketapp/Views/Screens/PaymentMethodScreen/payment_method
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
 import 'package:onlinemarketapp/Views/Widgets/contact_container.dart';
 
-class OrderNowScreen extends StatefulWidget {
+class OrderNowScreen extends StatelessWidget {
   const OrderNowScreen({Key key}) : super(key: key);
 
-  @override
-  _OrderNowScreenState createState() => _OrderNowScreenState();
-}
-
-class _OrderNowScreenState extends State<OrderNowScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(Duration(seconds: 2), () {
-      setState(() {
-        payment = true;
-      });
-    });
-  }
-
-  bool payment = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -240,25 +224,6 @@ class _OrderNowScreenState extends State<OrderNowScreen> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
-      floatingActionButton: payment
-          ? Container(
-              margin: EdgeInsets.only(bottom: SizeConfig.heightMultiplier * 8),
-              width: SizeConfig.widthMultiplier * 35,
-              child: FloatingActionButton(
-                onPressed: () {
-                  Get.to(PaymentMethodScreen());
-                },
-                backgroundColor: redColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-                child: Text(
-                  "Pay order",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-              ),
-            )
-          : null,
     );
   }
 }

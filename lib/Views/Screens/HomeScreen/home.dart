@@ -8,7 +8,9 @@ import 'package:onlinemarketapp/Models/deals_of_the_day_models.dart';
 import 'package:onlinemarketapp/Models/food_categories_models.dart';
 import 'package:onlinemarketapp/Models/mega_deals_models.dart';
 import 'package:onlinemarketapp/Views/Screens/MegaDealsDetailsScreen/mega_deals_detals.dart';
+import 'package:onlinemarketapp/Views/Screens/MyProfileScreen/my_profile_screen.dart';
 import 'package:onlinemarketapp/Views/Utils/SizedConfig.dart';
+import 'package:onlinemarketapp/Views/Widgets/custom_button_with_profile.dart';
 import '../../Widgets/deals_of_the_day_widget.dart';
 import 'Components/category_widget.dart';
 import 'Components/mega deals_widget.dart';
@@ -34,49 +36,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.heightMultiplier * 2,
                 ),
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        child: CustomPaint(
-                          size: Size(SizeConfig.widthMultiplier * 55,
-                              (SizeConfig.heightMultiplier * 7).toDouble()),
-                          painter: RPSCustomPainterButton(),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                top: SizeConfig.heightMultiplier * 1.6,
-                                bottom: SizeConfig.heightMultiplier * 1.6,
-                                left: SizeConfig.widthMultiplier * 5,
-                                right: SizeConfig.widthMultiplier * 12),
-                            child: Row(children: [
-                              Icon(
-                                MdiIcons.mapMarker,
-                                color: Colors.white,
-                              ),
-                              Text(
-                                "Oxford Street",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ]),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Spacer(),
-                    ClipOval(
-                        child: Image.asset(
-                      "assets/profile.png",
-                      fit: BoxFit.cover,
-                      height: 40,
-                    )),
-                    SizedBox(
-                      width: SizeConfig.widthMultiplier * 3,
-                    )
-                  ],
-                ),
+                CustomButtonWithProfilepic(),
                 Padding(
                   padding:
                       EdgeInsets.only(left: SizeConfig.widthMultiplier * 3),
